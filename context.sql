@@ -1,0 +1,19 @@
+CREATE OR REPLACE CONTEXT CAL_CTX_ADMIN30 USING set_cal_ctx_pkg;
+/
+CREATE OR REPLACE PACKAGE set_cal_ctx_pkg IS
+	PROCEDURE set_cal;
+END;
+/
+CREATE OR REPLACE PACKAGE BODY set_cal_ctx_pkg IS
+	PROCEDURE set_cal IS
+		myRole VARCHAR2(255);
+		idContact VARCHAR2(30);
+	BEGIN
+		SELECT granted_role INTO myRole
+		FROM DBA_ROLE_PRIVS
+		WHERE GRANTEE = SYS_CONTEXT('USER_ENV', 'SESSION_USER')
+		AND granted_role LIKE'%_ADMIN30';
+		DBMS_SESSION.SET_CONTEXT('CAL_CTX_ADMIN30', 'ROLE', myRole);
+	END set_cal;
+END set_cal_ctx_pkg;
+/
