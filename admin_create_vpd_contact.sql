@@ -6,14 +6,16 @@ CREATE OR REPLACE FUNCTION auth_ctc_admin30(
 RETURN VARCHAR2
 IS
     return_val VARCHAR2 (400);
+    role VARCHAR2 (200);
 BEGIN
-    IF SYS_CONTEXT() = 'R_CLIENT_ADMIN30' THEN 
+    role := SYS_CONTEXT('CAL_CTX_ADMIN30', 'ROLE');
+    IF role = 'R_CLIENT_ADMIN30' THEN
         return_val := 'id = SYS_CONTEXT(''USRENV'', ''SESSION_USER'')';
-    ELSE IF SYS_ = 'R_INFORMATICIEN_ADMIN30' THEN
+    ELSIF role = 'R_INFORMATICIEN_ADMIN30' THEN
         return_val := 'categorie = ''informaticien'' OR categorie = ''commercial''';
-    ELSE THEN
+    ELSE
         return_val := '1=1';
-    END IF;    
+    END IF; 
     RETURN return_val;
 END auth_emps;
 /
