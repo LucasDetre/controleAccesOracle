@@ -1,5 +1,3 @@
-DROP TABLE Contact_ADMIN30;
-
 CREATE TABLE Contact_ADMIN30
 (
   id varchar2(25) NOT NULL,
@@ -33,7 +31,6 @@ VALUES ('USER6', 'Depardieu', 'Gérard', 0766666666, 'mail6@gmail.com','Commerci
 INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie)
 VALUES ('USER7', 'Dujardin', 'Jean', 0777777777, 'mail7@gmail.com','Client');
 
-DROP TABLE Evenement_ADMIN30;
 
 CREATE TABLE Evenement_ADMIN30
 (
@@ -64,7 +61,6 @@ VALUES (4,'USER6', CURRENT_TIMESTAMP, 'Entreprise B', 'RDV Expression du besoin'
 INSERT INTO Evenement_ADMIN30 (id, id_createur, date_evenement, lieu, description)
 VALUES (5,'USER1', CURRENT_TIMESTAMP, 'Bureau 25', 'Pot de départ');
 
-DROP TABLE Calendrier_ADMIN30;
 
 CREATE TABLE Calendrier_ADMIN30
 (
