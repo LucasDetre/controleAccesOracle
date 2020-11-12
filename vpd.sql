@@ -7,9 +7,9 @@ RETURN VARCHAR2
 IS
     return_val VARCHAR2 (400);
 BEGIN
-    IF SYS_CONTEXT() = 'R.CLIENT.ADMIN30' THEN 
+    IF SYS_CONTEXT() = 'R_CLIENT_ADMIN30' THEN 
         return_val := 'id = SYS_CONTEXT(''USRENV'', ''SESSION_USER'')';
-    ELSE IF SYS_ = 'R.INFORMATICIEN.ADMIN30' THEN
+    ELSE IF SYS_ = 'R_INFORMATICIEN_ADMIN30' THEN
         return_val := 'categorie = ''informaticien'' OR categorie = ''commercial''';
     ELSE THEN
         return_val := '1=1';
