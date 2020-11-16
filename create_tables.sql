@@ -11,25 +11,27 @@ CREATE TABLE Contact_ADMIN30
 );
 
 INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie)
-VALUES ('USER1', 'Henaff', 'Maxime', 0611111111, 'mail1@gmail.com','Informaticien');
+VALUES ('USER1', 'Dujardin', 'Jean', 0777777777, 'mail7@gmail.com','Client');
 
 INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie)
-VALUES ('USER2', 'Detre', 'Lucas', 0722222222, 'mail2@gmail.com','Informaticien');
+VALUES ('USER2', 'Hallyday', 'Johnny', 0644444444, 'mail4@gmail.com','Client');
 
 INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie)
 VALUES ('USER3', 'Zidane', 'Zinedine', 0633333333, 'mail3@gmail.com','Client');
 
 INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie)
-VALUES ('USER4', 'Hallyday', 'Johnny', 0644444444, 'mail4@gmail.com','Client');
+VALUES ('USER4', 'Depardieu', 'Gérard', 0766666666, 'mail6@gmail.com','Commercial');
 
 INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie)
 VALUES ('USER5', 'Hollande', 'François', 0655555555, 'mail5@gmail.com','Commercial');
 
 INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie)
-VALUES ('USER6', 'Depardieu', 'Gérard', 0766666666, 'mail6@gmail.com','Commercial');
+VALUES ('USER6', 'Henaff', 'Maxime', 0611111111, 'mail1@gmail.com','Informaticien');
 
 INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie)
-VALUES ('USER7', 'Dujardin', 'Jean', 0777777777, 'mail7@gmail.com','Client');
+VALUES ('USER7', 'Detre', 'Lucas', 0722222222, 'mail2@gmail.com','Informaticien');
+
+
 
 
 CREATE TABLE Evenement_ADMIN30
