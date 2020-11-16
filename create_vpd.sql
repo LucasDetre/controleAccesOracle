@@ -22,7 +22,7 @@ END auth_emps;
 
 BEGIN
     DBMS_RLS.ADD_POLICY (
-        object_schema => 'dba',
+        object_schema => 'ADMIN30',
         object_name => 'Contact_ADMIN30',
         policy_name => 'ctc_policy_admin30',
         function_schema => 'sys',
@@ -31,3 +31,5 @@ BEGIN
     );
     END;
 /
+
+COMMIT;

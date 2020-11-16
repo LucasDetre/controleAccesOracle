@@ -18,9 +18,11 @@ DROP CONTEXT CAL_CTX_ADMIN30;
 DROP PACKAGE set_cal_ctx_pkg_admin30;
 
 DBMS_RLS.DROP_POLICY(
-    object_schema => 'dba',
+    object_schema => 'ADMIN30',
     object_name => 'Contact_ADMIN30',
     policy_name => 'ctc_policy_admin30'
 )
 
-DROP FUNCTION auth_ctc_admin30
+DROP FUNCTION auth_ctc_admin30;
+
+COMMIT;
