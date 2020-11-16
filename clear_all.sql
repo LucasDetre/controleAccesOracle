@@ -1,12 +1,17 @@
 BEGIN
-    DBMS_RLS.DROP_POLICY(
-        object_name => 'Contact_ADMIN30',
-        policy_name => 'ctc_policy_admin30'
-    );
+    DBMS_RLS.DROP_POLICY (object_name => 'Contact_ADMIN30', policy_name => 'sel_ctc_policy_admin30');
+    DBMS_RLS.DROP_POLICY (object_name => 'Contact_ADMIN30', policy_name => 'upd_ctc_policy_admin30');
+    DBMS_RLS.DROP_POLICY (object_name => 'Calendrier_ADMIN30', policy_name => 'sel_cld_policy_admin30');
+    DBMS_RLS.DROP_POLICY (object_name => 'Calendrier_ADMIN30', policy_name => 'upd_cld_policy_admin30');
+    DBMS_RLS.DROP_POLICY (object_name => 'Evenement_ADMIN30', policy_name => 'sel_evt_policy_admin30');
 END;
 /
 
-DROP FUNCTION auth_ctc_admin30;
+DROP FUNCTION sel_ctc_admin30;
+DROP FUNCTION upd_ctc_admin30;
+DROP FUNCTION sel_cld_admin30;
+DROP FUNCTION upd_cld_admin30;
+DROP FUNCTION sel_evt_admin30;
 
 DROP PACKAGE set_cal_ctx_pkg_admin30;
 

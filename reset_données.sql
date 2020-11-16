@@ -7,25 +7,25 @@ TRUNCATE TABLE admin30.Evenement_ADMIN30;
 prompt "ON RÉGENERE LA TABLE CONTACT"
 
 INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie)
-VALUES ('USER1', 'Henaff', 'Maxime', 0611111111, 'mail1@gmail.com','Informaticien');
+VALUES ('USER1', 'Dujardin', 'Jean', 0777777777, 'mail7@gmail.com','Client');
 
 INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie)
-VALUES ('USER2', 'Detre', 'Lucas', 0722222222, 'mail2@gmail.com','Informaticien');
+VALUES ('USER2', 'Hallyday', 'Johnny', 0644444444, 'mail4@gmail.com','Client');
 
 INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie)
 VALUES ('USER3', 'Zidane', 'Zinedine', 0633333333, 'mail3@gmail.com','Client');
 
 INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie)
-VALUES ('USER4', 'Hallyday', 'Johnny', 0644444444, 'mail4@gmail.com','Client');
+VALUES ('USER4', 'Depardieu', 'Gérard', 0766666666, 'mail6@gmail.com','Commercial');
 
 INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie)
 VALUES ('USER5', 'Hollande', 'François', 0655555555, 'mail5@gmail.com','Commercial');
 
 INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie)
-VALUES ('USER6', 'Depardieu', 'Gérard', 0766666666, 'mail6@gmail.com','Commercial');
+VALUES ('USER6', 'Henaff', 'Maxime', 0611111111, 'mail1@gmail.com','Informaticien');
 
 INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie)
-VALUES ('USER7', 'Dujardin', 'Jean', 0777777777, 'mail7@gmail.com','Client');
+VALUES ('USER7', 'Detre', 'Lucas', 0722222222, 'mail2@gmail.com','Informaticien');
 
 prompt "ON RÉGENERE LA TABLE EVENEMENT"
 
@@ -47,42 +47,42 @@ VALUES (5,'USER1', CURRENT_TIMESTAMP, 'Bureau 25', 'Pot de départ');
 prompt "ON RÉGENERE LA TABLE CALENDRIER"
 
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER1', 1);
+VALUES ('USER5', 1);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER2', 1);
+VALUES ('USER6', 1);
 
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER4', 2);
+VALUES ('USER1', 2);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
 VALUES ('USER5', 2);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER6', 2);
+VALUES ('USER4', 2);
 
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER1', 3);
+VALUES ('USER6', 3);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER2', 3);
+VALUES ('USER7', 3);
+INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
+VALUES ('USER4', 3);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
 VALUES ('USER5', 3);
-INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER6', 3);
 
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
 VALUES ('USER5', 4);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
 VALUES ('USER3', 4);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER7', 4);
+VALUES ('USER2', 4);
 
+INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
+VALUES ('USER6', 5);
+INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
+VALUES ('USER7', 5);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
 VALUES ('USER1', 5);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
 VALUES ('USER2', 5);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER3', 5);
-INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER4', 5);
-INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
 VALUES ('USER5', 5);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER6', 5);
+VALUES ('USER4', 5);
