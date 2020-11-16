@@ -2,7 +2,9 @@
 EXECUTE admin30.set_cal_ctx_pkg_admin30.set_cal;
 SELECT SYS_CONTEXT('CAL_CTX_ADMIN30', 'ROLE');
 
-prompt "DOIT FONCTIONNER"
+prompt "******************************************************"
+prompt "*******************DOIT FONCTIONNER*******************"
+prompt "******************************************************"
 
     prompt "SELECT SUR TOUTES LES TABLES"
         SELECT * FROM admin30.Contact_ADMIN30;
@@ -26,7 +28,9 @@ prompt "DOIT FONCTIONNER"
         DELETE FROM admin30.Calendrier_ADMIN30 WHERE id_contact='USER3' AND id_evenement=1;
         SELECT * FROM admin30.Calendrier_ADMIN30 WHERE id_contact='USER3' AND id_evenement=1;
 
-prompt "DOIT NE PAS FONCTIONNER"
+prompt "******************************************************"
+prompt "****************DOIT NE PAS FONCTIONNER***************"
+prompt "******************************************************"
 
     prompt "UPDATE, SUPPRESSION Contact"
 

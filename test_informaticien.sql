@@ -2,7 +2,9 @@
 EXECUTE admin30.set_cal_ctx_pkg_admin30.set_cal;
 SELECT SYS_CONTEXT('CAL_CTX_ADMIN30', 'ROLE');
 
-prompt "DOIT FONCTIONNER"
+prompt "******************************************************"
+prompt "*******************DOIT FONCTIONNER*******************"
+prompt "******************************************************"
 
     prompt "SELECT SUR TOUTES LES TABLES"
         SELECT * FROM admin30.Contact_ADMIN30;
@@ -26,7 +28,9 @@ prompt "DOIT FONCTIONNER"
         INSERT INTO admin30.Evenement_ADMIN30 (id, id_createur, date_evenement, lieu, description) VALUES (6,'USER2', CURRENT_TIMESTAMP, 'A distance', 'Demonstration TP SSI');
         SELECT * FROM admin30.Evenement_ADMIN30 WHERE id=6;
 
-prompt "DOIT NE PAS FONCTIONNER"
+prompt "******************************************************"
+prompt "****************DOIT NE PAS FONCTIONNER***************"
+prompt "******************************************************"
 
     prompt "INSERTION, SUPPRESSION Contact"
 
