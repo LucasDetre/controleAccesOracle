@@ -4,6 +4,7 @@ BEGIN
         policy_name => 'ctc_policy_admin30'
     );
 END;
+/
 
 DROP FUNCTION auth_ctc_admin30;
 
