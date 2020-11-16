@@ -79,44 +79,44 @@ CREATE TABLE Calendrier_ADMIN30
 );
 
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER1', 1);
+VALUES ('USER5', 1);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER2', 1);
+VALUES ('USER6', 1);
 
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER4', 2);
+VALUES ('USER1', 2);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
 VALUES ('USER5', 2);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER6', 2);
+VALUES ('USER4', 2);
 
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER1', 3);
+VALUES ('USER6', 3);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER2', 3);
+VALUES ('USER7', 3);
+INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
+VALUES ('USER4', 3);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
 VALUES ('USER5', 3);
-INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER6', 3);
 
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
 VALUES ('USER5', 4);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
 VALUES ('USER3', 4);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER7', 4);
+VALUES ('USER2', 4);
 
+INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
+VALUES ('USER6', 5);
+INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
+VALUES ('USER7', 5);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
 VALUES ('USER1', 5);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
 VALUES ('USER2', 5);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER3', 5);
-INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER4', 5);
-INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
 VALUES ('USER5', 5);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
-VALUES ('USER6', 5);
+VALUES ('USER4', 5);
 
 COMMIT;
