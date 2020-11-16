@@ -116,3 +116,5 @@ INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
 VALUES ('USER5', 5);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement)
 VALUES ('USER6', 5);
+
+COMMIT;

@@ -23,4 +23,6 @@ DBMS_RLS.DROP_POLICY(
     policy_name => 'ctc_policy_admin30'
 )
 
-DROP FUNCTION auth_ctc_admin30
+DROP FUNCTION auth_ctc_admin30;
+
+COMMIT;
