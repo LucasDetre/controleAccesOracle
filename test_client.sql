@@ -4,11 +4,15 @@ SELECT SYS_CONTEXT('CAL_CTX_ADMIN30', 'ROLE') FROM DUAL;
 
 prompt "******************************************************"
 prompt "*******************DOIT FONCTIONNER*******************"
+prompt "*************EN TANT QUE USER 1 : CLIENT**************"
 prompt "******************************************************"
 
     prompt "SELECT SUR TOUTES LES TABLES"
+        prompt "Résultat attendu : 1 ligne : sa propre ligne de contact"
         SELECT * FROM admin30.Contact_ADMIN30;
+        prompt "Résultat attendu : 2 lignes : les événements auquel il participe"
         SELECT * FROM admin30.Evenement_ADMIN30;
+        prompt "Résultat attendu : 2 lignes : le calendrier de ses événements"
         SELECT * FROM admin30.Calendrier_ADMIN30;
 
 prompt "******************************************************"
@@ -32,3 +36,5 @@ prompt "******************************************************"
         INSERT INTO admin30.Calendrier_ADMIN30 (id_contact, id_evenement) VALUES ('USER3', 1);
         DELETE FROM admin30.Calendrier_ADMIN30 WHERE id_contact='USER3' AND id_evenement=1;
         UPDATE admin30.Contact_ADMIN30 SET id_evenement=1 WHERE id='USER3'  AND id_evenement=4;
+
+ROLLBACK;

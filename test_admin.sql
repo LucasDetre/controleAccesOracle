@@ -8,8 +8,11 @@ prompt "******************************************************"
 
     prompt "SELECT SUR TOUTES LES TABLES"
 
+        prompt "Résultat attendu : 7 lignes : tous les contacts"
         SELECT * FROM admin30.Contact_ADMIN30;
+        prompt "Résultat attendu : 5 lignes : tous les événements"
         SELECT * FROM admin30.Evenement_ADMIN30;
+        prompt "Résultat attendu : 18 lignes : tous les calendriers"
         SELECT * FROM admin30.Calendrier_ADMIN30;
 
     prompt "INSERTION, SUPPRESSION, MISE A JOUR Contact"
@@ -53,3 +56,5 @@ prompt "******************************************************"
         UPDATE admin30.Calendrier_ADMIN30 SET id_evenement=1 WHERE id='USER3'  AND id_evenement=4;
         SELECT * FROM admin30.Calendrier_ADMIN30  WHERE id_contact='USER3' AND id_evenement=1;
         SELECT * FROM admin30.Calendrier_ADMIN30  WHERE id_contact='USER3' AND id_evenement=4;
+
+ROLLBACK;
