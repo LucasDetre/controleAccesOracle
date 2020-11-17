@@ -1,3 +1,9 @@
+prompt (appuyer sur une touche pour continuer);
+accept temp default '100';
+prompt "On crée les vpd"
+prompt (appuyer sur une touche pour continuer);
+accept temp default '100';
+
 -- F1 : Limite le select sur la table Contact_ADMIN30 en fonction du rôle
 CREATE OR REPLACE FUNCTION sel_ctc_admin30(schema_var IN VARCHAR2, table_var IN VARCHAR2) RETURN VARCHAR2
 IS
@@ -11,10 +17,10 @@ BEGIN
     ELSIF user_role = 'R_INFORMATICIEN_ADMIN30' THEN
         -- Informaticien non admin ne peut accéder aux données clients
         return_val := 'categorie = ''Informaticien'' OR categorie = ''Commercial''';
-    ELSE 
+    ELSE
         -- Commercial et admin non limités
         return_val := '1=1';
-    END IF; 
+    END IF;
     RETURN return_val;
 END sel_ctc_admin30;
 /
@@ -50,7 +56,7 @@ BEGIN
     IF user_role = 'R_CLIENT_ADMIN30' OR user_role = 'R_INFORMATICIEN_ADMIN30' THEN
         -- Client et Informaticien non admin peuvent voir les réunions auxquels ils sont conviés
         return_val := 'id_contact = SYS_CONTEXT(''USERENV'', ''SESSION_USER'')';
-    ELSE 
+    ELSE
         -- Commercial et Admin peuvent voir l'ensemble du calendrier
         return_val := '1=1';
     END IF;
@@ -68,7 +74,7 @@ BEGIN
     IF user_role = 'R_INFORMATICIEN_ADMIN30' THEN
         -- Informaticien non admin peut seulement supprimer sa participation à une réunion
         return_val := 'id_contact = SYS_CONTEXT(''USERENV'', ''SESSION_USER'')';
-    ELSE 
+    ELSE
         -- Commercial et Admin non limités
         return_val := '1=1';
     END IF;
@@ -86,10 +92,10 @@ BEGIN
     IF user_role = 'R_CLIENT_ADMIN30' THEN
         -- Client peut voir les évènements auxquels il participe
         return_val := 'id IN (SELECT id_evenement FROM ADMIN30.Calendrier_ADMIN30 WHERE id_contact = SYS_CONTEXT(''USERENV'', ''SESSION_USER''))';
-    ELSIF user_role = 'R_INFORMATICIEN_ADMIN30' OR user_role = 'R_COMMERCIAL_ADMIN30' THEN        
+    ELSIF user_role = 'R_INFORMATICIEN_ADMIN30' OR user_role = 'R_COMMERCIAL_ADMIN30' THEN
         -- Informaticien et commercial peuvent voir les informations sur les évènements auxquels ils participent ou qu'ils ont créé
         return_val := 'id IN (SELECT id_evenement FROM ADMIN30.Calendrier_ADMIN30 WHERE id_contact = SYS_CONTEXT(''USERENV'', ''SESSION_USER'')) OR id_createur = SYS_CONTEXT(''USERENV'', ''SESSION_USER'')';
-    ELSE 
+    ELSE
         -- Admin non limité
         return_val := '1=1';
     END IF;

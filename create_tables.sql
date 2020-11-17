@@ -1,3 +1,9 @@
+prompt (appuyer sur une touche pour continuer);
+accept temp default '100';
+prompt "On crée les tables et on y insère des données"
+prompt (appuyer sur une touche pour continuer);
+accept temp default '100';
+
 CREATE TABLE Contact_ADMIN30
 (
   id varchar2(25) NOT NULL, -- On utilise ici directement l'identifiant du user (ex: 'USER1')

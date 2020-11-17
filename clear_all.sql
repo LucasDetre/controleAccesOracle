@@ -1,3 +1,9 @@
+prompt (appuyer sur une touche pour continuer);
+accept temp default '100';
+prompt "On nettoie la base pour commencer"
+prompt (appuyer sur une touche pour continuer);
+accept temp default '100';
+
 BEGIN
     DBMS_RLS.DROP_POLICY (object_name => 'Contact_ADMIN30', policy_name => 'sel_ctc_policy_admin30');
     DBMS_RLS.DROP_POLICY (object_name => 'Contact_ADMIN30', policy_name => 'upd_ctc_policy_admin30');

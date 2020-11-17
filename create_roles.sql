@@ -1,3 +1,10 @@
+
+prompt (appuyer sur une touche pour continuer);
+accept temp default '100';
+prompt "On crée les rôles"
+prompt (appuyer sur une touche pour continuer);
+accept temp default '100';
+
 -- CREATION DES ROLES
 CREATE ROLE R_CLIENT_ADMIN30;
 GRANT SELECT ON Contact_ADMIN30 TO R_CLIENT_ADMIN30;

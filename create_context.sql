@@ -1,3 +1,10 @@
+
+prompt (appuyer sur une touche pour continuer);
+accept temp default '100';
+prompt "On crée les contextes"
+prompt (appuyer sur une touche pour continuer);
+accept temp default '100';
+
 CREATE OR REPLACE CONTEXT CAL_CTX_ADMIN30 USING set_cal_ctx_pkg_admin30;
 /
 CREATE OR REPLACE PACKAGE set_cal_ctx_pkg_admin30 IS
