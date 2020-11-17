@@ -12,9 +12,9 @@ prompt "******************************************************"
         SELECT * FROM admin30.Calendrier_ADMIN30;
 
     prompt "MISE A JOUR CONTACT"
-        SELECT * FROM admin30.Contact WHERE id='USER2';
+        SELECT * FROM admin30.Contact_ADMIN30 WHERE id='USER2';
         UPDATE admin30.Contact_ADMIN30 SET nom='SMITH' WHERE id='USER2';
-        SELECT * FROM admin30.Contact WHERE id='USER2';
+        SELECT * FROM admin30.Contact_ADMIN30 WHERE id='USER2';
 
     prompt "INSERTION ET SUPPRESSION CALENDRIER"
         SELECT * FROM admin30.Calendrier_ADMIN30 WHERE id_contact='USER3' AND id_evenement=1;
