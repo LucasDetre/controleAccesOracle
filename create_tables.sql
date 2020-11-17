@@ -1,11 +1,11 @@
 CREATE TABLE Contact_ADMIN30
 (
-  id varchar2(25) NOT NULL,
+  id varchar2(25) NOT NULL, -- On utilise ici directement l'identifiant du user (ex: 'USER1')
   nom varchar2(25) NOT NULL,
   prenom varchar2(25) NOT NULL,
   telephone number(10),
   courriel varchar2(40),
-  categorie varchar2(25),
+  categorie varchar2(25), -- Ici la catégorie ne correspond pas forcément au rôle (le rôle admin correspond à un informaticien dans l'entreprise)
   CONSTRAINT pk_Contact_ADMIN30
       PRIMARY KEY (id)
 );
@@ -17,7 +17,6 @@ INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie) VA
 INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie) VALUES ('USER5', 'Hollande', 'François', 0655555555, 'mail5@gmail.com','Commercial');
 INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie) VALUES ('USER6', 'Henaff', 'Maxime', 0611111111, 'mail1@gmail.com','Informaticien');
 INSERT INTO Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie) VALUES ('USER7', 'Detre', 'Lucas', 0722222222, 'mail2@gmail.com','Informaticien');
-
 
 CREATE TABLE Evenement_ADMIN30
 (
@@ -45,14 +44,13 @@ CREATE TABLE Calendrier_ADMIN30
   id_contact varchar2(25) NOT NULL,
   CONSTRAINT PK_Calendrier_ADMIN30
       PRIMARY KEY (id_evenement, id_contact),
-  CONSTRAINT FK_Calendrier_ADMIN30_contacts
+  CONSTRAINT FK_Calendrier_ADMIN30_contact
       FOREIGN KEY (id_contact)
       REFERENCES Contact_ADMIN30(id),
   CONSTRAINT FK_Calendrier_ADMIN30_even
       FOREIGN KEY (id_evenement)
       REFERENCES Evenement_ADMIN30(id)
 );
-
 
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement) VALUES ('USER5', 1);
 INSERT INTO Calendrier_ADMIN30 (id_contact, id_evenement) VALUES ('USER6', 1);
