@@ -13,7 +13,7 @@ prompt "******************************************************"
 
     prompt "MISE A JOUR CONTACT"
         SELECT * FROM admin30.Contact WHERE id='USER2';
-        UPDATE Contact_ADMIN30 SET nom='SMITH' WHERE id='USER2';
+        UPDATE admin30.Contact_ADMIN30 SET nom='SMITH' WHERE id='USER2';
         SELECT * FROM admin30.Contact WHERE id='USER2';
 
     prompt "INSERTION ET SUPPRESSION CALENDRIER"
@@ -39,9 +39,9 @@ prompt "******************************************************"
 
     prompt "UPDATE, SUPPRESSION Evenement"
 
-        UPDATE Contact_ADMIN30 SET lieu='Salle de réunion C' WHERE id=3;
+        UPDATE admin30.Evenement_ADMIN30 SET lieu='Salle de réunion C' WHERE id=3;
         DELETE FROM admin30.Evenement_ADMIN30 WHERE id=5;
 
     prompt "UPDATE Calendrier"
 
-        UPDATE Contact_ADMIN30 SET id_evenement=1 WHERE id='USER3' AND id_evenement=4;
+        UPDATE admin30.Calendrier_ADMIN30 SET id_evenement=1 WHERE id='USER3' AND id_evenement=4;

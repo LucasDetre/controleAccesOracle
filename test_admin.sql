@@ -22,7 +22,7 @@ prompt "******************************************************"
         SELECT * FROM admin30.Contact_ADMIN30 WHERE id='USER8';
 
         SELECT * FROM admin30.Contact_ADMIN30 WHERE id='USER2';
-        UPDATE Contact_ADMIN30 SET nom='SMITH' WHERE id='USER2';
+        UPDATE admin30.Contact_ADMIN30 SET nom='SMITH' WHERE id='USER2';
         SELECT * FROM admin30.Contact_ADMIN30 WHERE id='USER2';
 
     prompt "INSERTION, SUPPRESSION, MISE A JOUR Evenement"
@@ -36,7 +36,7 @@ prompt "******************************************************"
         SELECT * FROM admin30.Evenement_ADMIN30 WHERE id=6;
 
         SELECT * FROM admin30.Evenement_ADMIN30 WHERE id=3;
-        UPDATE Contact_ADMIN30 SET lieu='Salle de réunion C' WHERE id=3;
+        UPDATE admin30.Evenement_ADMIN30 SET lieu='Salle de réunion C' WHERE id=3;
         SELECT * FROM admin30.Evenement_ADMIN30 WHERE id=3;
 
     prompt "INSERTION, SUPPRESSION, MISE A JOUR Calendrier"
@@ -48,8 +48,8 @@ prompt "******************************************************"
         SELECT * FROM admin30.Calendrier_ADMIN30 WHERE id_contact='USER3' AND id_evenement=1;
 
         prompt "On change l'utilisateur 3 d'événement depuis l'évenement 4 vers l'évenement 1"
-        SELECT * FROM admin30.Contact  WHERE id_contact='USER3' AND id_evenement=1;
-        SELECT * FROM admin30.Contact  WHERE id_contact='USER3' AND id_evenement=4;
-        UPDATE Contact_ADMIN30 SET id_evenement=1 WHERE id='USER3'  AND id_evenement=4;
-        SELECT * FROM admin30.Contact  WHERE id_contact='USER3' AND id_evenement=1;
-        SELECT * FROM admin30.Contact  WHERE id_contact='USER3' AND id_evenement=4;
+        SELECT * FROM admin30.Calendrier_ADMIN30  WHERE id_contact='USER3' AND id_evenement=1;
+        SELECT * FROM admin30.Calendrier_ADMIN30  WHERE id_contact='USER3' AND id_evenement=4;
+        UPDATE admin30.Calendrier_ADMIN30 SET id_evenement=1 WHERE id='USER3'  AND id_evenement=4;
+        SELECT * FROM admin30.Calendrier_ADMIN30  WHERE id_contact='USER3' AND id_evenement=1;
+        SELECT * FROM admin30.Calendrier_ADMIN30  WHERE id_contact='USER3' AND id_evenement=4;
