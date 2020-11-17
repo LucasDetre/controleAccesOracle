@@ -35,9 +35,9 @@ CREATE TABLE Evenement_ADMIN30
 
 INSERT INTO Evenement_ADMIN30 (id, id_createur, date_evenement, lieu, description) VALUES (1,'USER5', CURRENT_TIMESTAMP, 'Bureau 25', 'RDV MOE');
 INSERT INTO Evenement_ADMIN30 (id, id_createur, date_evenement, lieu, description) VALUES (2,'USER5', CURRENT_TIMESTAMP, 'Salle de conférence', 'RDV Suivi devis');
-INSERT INTO Evenement_ADMIN30 (id, id_createur, date_evenement, lieu, description) VALUES (3,'USER2', CURRENT_TIMESTAMP, 'Bureau A', 'RDV mensuel interne');
-INSERT INTO Evenement_ADMIN30 (id, id_createur, date_evenement, lieu, description) VALUES (4,'USER6', CURRENT_TIMESTAMP, 'Entreprise B', 'RDV Expression du besoin');
-INSERT INTO Evenement_ADMIN30 (id, id_createur, date_evenement, lieu, description) VALUES (5,'USER1', CURRENT_TIMESTAMP, 'Bureau 25', 'Pot de départ');
+INSERT INTO Evenement_ADMIN30 (id, id_createur, date_evenement, lieu, description) VALUES (3,'USER6', CURRENT_TIMESTAMP, 'Bureau A', 'RDV mensuel interne');
+INSERT INTO Evenement_ADMIN30 (id, id_createur, date_evenement, lieu, description) VALUES (4,'USER4', CURRENT_TIMESTAMP, 'Entreprise B', 'RDV Expression du besoin');
+INSERT INTO Evenement_ADMIN30 (id, id_createur, date_evenement, lieu, description) VALUES (5,'USER7', CURRENT_TIMESTAMP, 'Bureau 25', 'Pot de départ');
 
 CREATE TABLE Calendrier_ADMIN30
 (
