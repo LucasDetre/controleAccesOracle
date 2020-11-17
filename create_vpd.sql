@@ -60,9 +60,8 @@ IS
     user_role VARCHAR2 (200);
 BEGIN
     user_role := SYS_CONTEXT('CAL_CTX_ADMIN30', 'ROLE');
-    IF user_role = 'R_INFORMATICIEN_ADMIN30' OR 'R_COMMERCIAL_ADMIN30' THEN
-        return_val := ' id_contact = SYS_CONTEXT(''USERENV'', ''SESSION_USER'') OR 
-                        id_evenement IN (SELECT id FROM ADMIN30.EVENEMENT_ADMIN30 WHERE id_creator = SYS_CONTEXT(''USERENV'', ''SESSION_USER''))';
+    IF user_role = 'R_INFORMATICIEN_ADMIN30' OR user_role = 'R_COMMERCIAL_ADMIN30' THEN
+        return_val := ' id_contact = SYS_CONTEXT(''USERENV'', ''SESSION_USER'') OR id_evenement IN (SELECT id FROM ADMIN30.EVENEMENT_ADMIN30 WHERE id_creator = SYS_CONTEXT(''USERENV'', ''SESSION_USER''))';
     ELSE -- Commercial et Admin
         return_val := '1=1';
     END IF;
@@ -79,11 +78,11 @@ BEGIN
     user_role := SYS_CONTEXT('CAL_CTX_ADMIN30', 'ROLE');
     IF user_role = 'R_CLIENT_ADMIN30' THEN
         return_val := 'id IN (SELECT id_evenement FROM Calendrier WHERE id_contact = SYS_CONTEXT(''USERENV'', ''SESSION_USER'')';
-    ELSIF user_role = 'R_INFORMATICIEN_ADMIN30' OR 'R_COMMERCIAL_ADMIN30' THEN        
+    ELSIF user_role = 'R_INFORMATICIEN_ADMIN30' OR user_role = 'R_COMMERCIAL_ADMIN30' THEN        
         return_val := 'id IN (SELECT id_evenement FROM Calendrier WHERE id_contact = SYS_CONTEXT(''USERENV'', ''SESSION_USER'') OR id_createur = SYS_CONTEXT(''USERENV'', ''SESSION_USER''))';
     ELSE -- Admin
         return_val := '1=1';
-    END IF;
+    END IF;sqld
     RETURN return_val;
 END sel_evt_admin30;
 /
