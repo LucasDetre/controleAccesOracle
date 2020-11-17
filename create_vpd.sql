@@ -44,8 +44,7 @@ BEGIN
     IF user_role = 'R_CLIENT_ADMIN30' THEN
         return_val := 'id_contact = SYS_CONTEXT(''USERENV'', ''SESSION_USER'')';
     ELSIF user_role = 'R_INFORMATICIEN_ADMIN30' THEN
-        return_val := ' id_contact = SYS_CONTEXT(''USERENV'', ''SESSION_USER'') OR 
-                        id_evenement IN (SELECT id FROM ADMIN30.EVENEMENT_ADMIN30 WHERE id_creator = SYS_CONTEXT(''USERENV'', ''SESSION_USER''))';
+        return_val := 'id_contact = SYS_CONTEXT(''USERENV'', ''SESSION_USER'') OR id_evenement IN (SELECT id FROM ADMIN30.EVENEMENT_ADMIN30 WHERE id_createur = SYS_CONTEXT(''USERENV'', ''SESSION_USER''))';
     ELSE -- Commercial et Admin
         return_val := '1=1';
     END IF;
@@ -61,7 +60,7 @@ IS
 BEGIN
     user_role := SYS_CONTEXT('CAL_CTX_ADMIN30', 'ROLE');
     IF user_role = 'R_INFORMATICIEN_ADMIN30' OR user_role = 'R_COMMERCIAL_ADMIN30' THEN
-        return_val := ' id_contact = SYS_CONTEXT(''USERENV'', ''SESSION_USER'') OR id_evenement IN (SELECT id FROM ADMIN30.EVENEMENT_ADMIN30 WHERE id_creator = SYS_CONTEXT(''USERENV'', ''SESSION_USER''))';
+        return_val := 'id_contact = SYS_CONTEXT(''USERENV'', ''SESSION_USER'') OR id_evenement IN (SELECT id FROM ADMIN30.EVENEMENT_ADMIN30 WHERE id_createur = SYS_CONTEXT(''USERENV'', ''SESSION_USER''))';
     ELSE -- Commercial et Admin
         return_val := '1=1';
     END IF;
@@ -77,9 +76,9 @@ IS
 BEGIN
     user_role := SYS_CONTEXT('CAL_CTX_ADMIN30', 'ROLE');
     IF user_role = 'R_CLIENT_ADMIN30' THEN
-        return_val := 'id IN (SELECT id_evenement FROM Calendrier WHERE id_contact = SYS_CONTEXT(''USERENV'', ''SESSION_USER'')';
+        return_val := 'id IN (SELECT id_evenement FROM ADMIN30.Calendrier_ADMIN30 WHERE id_contact = SYS_CONTEXT(''USERENV'', ''SESSION_USER'')';
     ELSIF user_role = 'R_INFORMATICIEN_ADMIN30' OR user_role = 'R_COMMERCIAL_ADMIN30' THEN        
-        return_val := 'id IN (SELECT id_evenement FROM Calendrier WHERE id_contact = SYS_CONTEXT(''USERENV'', ''SESSION_USER'') OR id_createur = SYS_CONTEXT(''USERENV'', ''SESSION_USER''))';
+        return_val := 'id IN (SELECT id_evenement FROM ADMIN30.Calendrier_ADMIN30 WHERE id_contact = SYS_CONTEXT(''USERENV'', ''SESSION_USER'') OR id_createur = SYS_CONTEXT(''USERENV'', ''SESSION_USER''))';
     ELSE -- Admin
         return_val := '1=1';
     END IF;
@@ -91,7 +90,7 @@ BEGIN
     DBMS_RLS.ADD_POLICY (object_name => 'Contact_ADMIN30', policy_name => 'sel_ctc_policy_admin30', policy_function => 'sel_ctc_admin30', statement_types => 'select');
     DBMS_RLS.ADD_POLICY (object_name => 'Contact_ADMIN30', policy_name => 'upd_ctc_policy_admin30', policy_function => 'upd_ctc_admin30', statement_types => 'update');
     DBMS_RLS.ADD_POLICY (object_name => 'Calendrier_ADMIN30', policy_name => 'sel_cld_policy_admin30', policy_function => 'sel_cld_admin30', statement_types => 'select');
-    DBMS_RLS.ADD_POLICY (object_name => 'Calendrier_ADMIN30', policy_name => 'upd_cld_policy_admin30', policy_function => 'del_cld_admin30', statement_types => 'delete');
+    DBMS_RLS.ADD_POLICY (object_name => 'Calendrier_ADMIN30', policy_name => 'del_cld_policy_admin30', policy_function => 'del_cld_admin30', statement_types => 'delete');
     DBMS_RLS.ADD_POLICY (object_name => 'Evenement_ADMIN30', policy_name => 'sel_evt_policy_admin30', policy_function => 'sel_evt_admin30', statement_types => 'select');
 END;
 /
