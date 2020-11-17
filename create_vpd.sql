@@ -82,7 +82,7 @@ BEGIN
         return_val := 'id IN (SELECT id_evenement FROM Calendrier WHERE id_contact = SYS_CONTEXT(''USERENV'', ''SESSION_USER'') OR id_createur = SYS_CONTEXT(''USERENV'', ''SESSION_USER''))';
     ELSE -- Admin
         return_val := '1=1';
-    END IF;sqld
+    END IF;
     RETURN return_val;
 END sel_evt_admin30;
 /
