@@ -6,3 +6,10 @@ select * from dba_tab_privs where grantee IN (select granted_role from user_role
 prompt ____________________________________________________________________;
 prompt Selection sur client par USER1 rôle client (appuyer sur une touche pour continuer);
 accept temp default '100';
+
+CONNECT ADMIN13/admin@cienetdb
+@CREATE_TABLE
+@CREATE_VIEW
+@CREATE_ROLE
+@CONTEXTE
+@VPD
