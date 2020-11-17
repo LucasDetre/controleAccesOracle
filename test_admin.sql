@@ -21,16 +21,19 @@ prompt "******************************************************"
         prompt (appuyer sur une touche pour continuer);
         accept temp default '100';
         prompt "Résultat attendu : 7 lignes : tous les contacts"
+        prompt SELECT * FROM admin30.Contact_ADMIN30;
         SELECT * FROM admin30.Contact_ADMIN30;
 
         prompt (appuyer sur une touche pour continuer);
         accept temp default '100';
         prompt "Résultat attendu : 5 lignes : tous les événements"
+        prompt SELECT * FROM admin30.Evenement_ADMIN30;
         SELECT * FROM admin30.Evenement_ADMIN30;
 
         prompt (appuyer sur une touche pour continuer);
         accept temp default '100';
         prompt "Résultat attendu : 18 lignes : tous les calendriers"
+        prompt SELECT * FROM admin30.Calendrier_ADMIN30;
         SELECT * FROM admin30.Calendrier_ADMIN30;
 
 

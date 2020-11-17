@@ -36,16 +36,19 @@ prompt "******************************************************"
         prompt (appuyer sur une touche pour continuer);
         accept temp default '100';
         prompt "Résultat attendu : 1 ligne : sa propre ligne de contact"
+        prompt SELECT * FROM admin30.Contact_ADMIN30;
         SELECT * FROM admin30.Contact_ADMIN30;
 
         prompt (appuyer sur une touche pour continuer);
         accept temp default '100';
         prompt "Résultat attendu : 2 lignes : les événements auquel il participe"
+        prompt SELECT * FROM admin30.Evenement_ADMIN30;
         SELECT * FROM admin30.Evenement_ADMIN30;
 
         prompt (appuyer sur une touche pour continuer);
         accept temp default '100';
         prompt "Résultat attendu : 2 lignes : le calendrier de ses événements"
+        prompt SELECT * FROM admin30.Calendrier_ADMIN30;
         SELECT * FROM admin30.Calendrier_ADMIN30;
 
 prompt "******************************************************"

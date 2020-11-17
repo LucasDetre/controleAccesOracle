@@ -34,14 +34,19 @@ prompt "******************************************************"
         prompt (appuyer sur une touche pour continuer);
         accept temp default '100';
         prompt "Résultat attendu : 4 lignes : les commerciaux et les informaticiens"
+        prompt SELECT * FROM admin30.Contact_ADMIN30;
         SELECT * FROM admin30.Contact_ADMIN30;
+
         prompt (appuyer sur une touche pour continuer);
         accept temp default '100';
         prompt "Résultat attendu : 3 lignes : les événements auquel il participe ou qu'il a créé"
+        prompt SELECT * FROM admin30.Evenement_ADMIN30;
         SELECT * FROM admin30.Evenement_ADMIN30;
+
         prompt (appuyer sur une touche pour continuer);
         accept temp default '100';
         prompt "Résultat attendu : 3 lignes : le calendrier de ses événements"
+        prompt SELECT * FROM admin30.Calendrier_ADMIN30;
         SELECT * FROM admin30.Calendrier_ADMIN30;
 
     prompt (appuyer sur une touche pour continuer);
@@ -50,12 +55,14 @@ prompt "******************************************************"
         prompt (appuyer sur une touche pour continuer);
         accept temp default '100';
         prompt "Résultat attendu : 1 ligne mise à jour"
+        prompt UPDATE admin30.Contact_ADMIN30 SET nom='SMITH';
         UPDATE admin30.Contact_ADMIN30 SET nom='SMITH';
 
     prompt (appuyer sur une touche pour continuer);
     accept temp default '100';
     prompt "INSERTION EVENEMENT"
         prompt "Résultat attendu : 1 ligne insérée"
+        prompt INSERT INTO admin30.Evenement_ADMIN30 (id, id_createur, date_evenement, lieu, description) VALUES (6,'USER2', CURRENT_TIMESTAMP, 'A distance', 'Demonstration TP SSI');
         INSERT INTO admin30.Evenement_ADMIN30 (id, id_createur, date_evenement, lieu, description) VALUES (6,'USER2', CURRENT_TIMESTAMP, 'A distance', 'Demonstration TP SSI');
 
 
@@ -66,11 +73,13 @@ prompt "******************************************************"
         prompt (appuyer sur une touche pour continuer);
         accept temp default '100';
         prompt "Résultat attendu : 1 ligne insérée"
+        prompt INSERT INTO admin30.Calendrier_ADMIN30 (id_contact, id_evenement) VALUES ('USER6', 2);
         INSERT INTO admin30.Calendrier_ADMIN30 (id_contact, id_evenement) VALUES ('USER6', 2);
 
         prompt (appuyer sur une touche pour continuer);
         accept temp default '100';
         prompt "Résult attendu : 4 lignes supprimées"
+        prompt DELETE FROM admin30.Calendrier_ADMIN30;
         DELETE FROM admin30.Calendrier_ADMIN30;
 
 
