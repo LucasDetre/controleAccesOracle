@@ -1,0 +1,3 @@
+select * from user_tab_privs where table_name like '%_ADMIN30';
+select granted_role from dba_role_privs where grantee = SYS_CONTEXT('USERENV', 'SESSION_USER') and granted_role like '%_ADMIN30';
+select * from dba_tab_privs where grantee IN (select granted_role from user_role_privs where granted_role like '%_ADMIN30');
