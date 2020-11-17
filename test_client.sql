@@ -79,4 +79,9 @@ prompt "******************************************************"
         DELETE FROM admin30.Calendrier_ADMIN30 WHERE id_contact='USER3' AND id_evenement=1;
         UPDATE admin30.Contact_ADMIN30 SET id_evenement=1 WHERE id='USER3'  AND id_evenement=4;
 
+    prompt "SELECT Vue Calendrier x Evenement x Contact"
+        prompt (appuyer sur une touche pour continuer);
+        accept temp default '100';
+        SELECT * FROM admin30.VCal_Evnt_Contact_ADMIN30;
+
 ROLLBACK;
