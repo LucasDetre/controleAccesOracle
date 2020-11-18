@@ -1,21 +1,19 @@
-# TP Controle d'acces Oracle
+Le seul script a exécuter pour ce projet est lancement_demo.sql.
 
-## Installation
+Le déroulement est contrôlé par l'utilisateur qui est invité à appuyer sur Entrée pour continuer le déroulement.
 
-```
-    docker build -t wnameless/oracle-xe-11g .
-```
+Si l'utilisateur souhaite exécuter les scripts séparemment, l'ordre à suivre est le suivant :
+    - clear_all.sql
+    - create_tables.sql
+    - create_view.sql
+    - create_roles.sql
+    - create_context.sql
+    - create_vpd.sql
 
-```
-    docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g-r2
-```
+Une fois les différents objets créés, nous pouvons lancer les scripts "test", sans contrainte d'ordre, mais en se connectant au bon utilisateur.
 
-Accès à la base depuis SqlDeveloper avec les paramètres suivants :
-
-```
-hostname: localhost
-port: 49161
-sid: xe
-username: system
-password: oracle
-```
+Les rôles des utilisateurs sont les suivant :
+    - USER 1 à 3 : Clients
+    - USER 4 et 5 : Commercial
+    - USER 6 : Informaticien
+    - USER 7 : Admin
