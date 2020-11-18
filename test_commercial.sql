@@ -1,5 +1,8 @@
+
+accept temp default '100';
 prompt "==============================================================================================="
-prompt "Test rôle Admin"
+prompt "================================Test rôle Commecial============================================"
+prompt "==============================================================================================="
 
 -- Test Contexte
 EXECUTE admin30.set_cal_ctx_pkg_admin30.set_cal;
@@ -57,8 +60,6 @@ prompt "******************************************************"
         prompt INSERT INTO admin30.Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie) VALUES ('USER8', 'Testeur', 'Jean-Michel', 0777777777, 'test@gmail.com','Client');
         INSERT INTO admin30.Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie) VALUES ('USER8', 'Testeur', 'Jean-Michel', 0777777777, 'test@gmail.com','Client');
 
-
-
     prompt (appuyer sur une touche pour continuer);
     accept temp default '100';
     prompt "INSERTION Evenement"
@@ -66,7 +67,7 @@ prompt "******************************************************"
         prompt INSERT INTO admin30.Evenement_ADMIN30 (id, id_createur, date_evenement, lieu, description) VALUES (6,'USER4', CURRENT_TIMESTAMP, 'A distance', 'Demonstration TP SSI');
         INSERT INTO admin30.Evenement_ADMIN30 (id, id_createur, date_evenement, lieu, description) VALUES (6,'USER4', CURRENT_TIMESTAMP, 'A distance', 'Demonstration TP SSI');
 
-    mpt (appuyer sur une touche pour continuer);
+    prompt (appuyer sur une touche pour continuer);
     accept temp default '100';
     prompt "INSERTION ET SUPPRESSION Calendrier"
         prompt "Résultat attendu : 1 ligne insérée"
@@ -95,7 +96,7 @@ prompt (appuyer sur une touche pour continuer);
 accept temp default '100';
 
         UPDATE admin30.Contact_ADMIN30 SET nom='SMITH' WHERE id='USER2';
-        DELETE FROM admin30.Contact_ADMIN30 WHERE id_contact='USER8';
+        DELETE FROM admin30.Contact_ADMIN30 WHERE id='USER8';
 
     prompt "UPDATE, SUPPRESSION Evenement"
 prompt (appuyer sur une touche pour continuer);

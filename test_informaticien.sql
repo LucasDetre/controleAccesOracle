@@ -1,5 +1,8 @@
+
+accept temp default '100';
 prompt "==============================================================================================="
-prompt "Test rôle Admin"
+prompt "================================Test rôle Informaticien========================================"
+prompt "==============================================================================================="
 
 -- Test Contexte
 EXECUTE admin30.set_cal_ctx_pkg_admin30.set_cal;
@@ -94,7 +97,7 @@ prompt "******************************************************"
     prompt "INSERTION, SUPPRESSION Contact"
 
         INSERT INTO admin30.Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie) VALUES ('USER8', 'Testeur', 'Jean-Michel', 0777777777, 'test@gmail.com','Client');
-        DELETE FROM admin30.Contact_ADMIN30 WHERE id_contact='USER7';
+        DELETE FROM admin30.Contact_ADMIN30 WHERE id='USER7';
 
     prompt "UPDATE, SUPPRESSION Evenement"
 

@@ -1,18 +1,34 @@
+accept temp default '100';
 prompt "==============================================================================================="
-prompt "Test rôle Admin"
+prompt "====================================Test rôle Admin============================================"
+prompt "==============================================================================================="
 
 
 -- Test Contexte
 EXECUTE admin30.set_cal_ctx_pkg_admin30.set_cal;
 SELECT SYS_CONTEXT('CAL_CTX_ADMIN30', 'ROLE') FROM DUAL;
 
+prompt "******************************************************"
+prompt "************INTERROGATION DES DICTIONNAIRES***********"
+prompt "******************************************************"
+
+prompt (appuyer sur une touche pour continuer);
+accept temp default '100';
 prompt "Tous les privilèges directs du user sur les tables : résultat attendu : rien sauf execute (pas de privilège direct, uniquement de l'execute de vpd)"
 select * from user_tab_privs where table_name like '%_ADMIN30';
-prompt "Le ou les rôles affecté au user : résultat attendu : R_ADMIN_ADMIN30 "
+
+prompt (appuyer sur une touche pour continuer);
+accept temp default '100';
+prompt "Le ou les rôles affecté au user : résultat attendu : R_ADMIN_ADMIN30"
 select granted_role from dba_role_privs where grantee = SYS_CONTEXT('USERENV', 'SESSION_USER') and granted_role like '%_ADMIN30';
+
+prompt (appuyer sur une touche pour continuer);
+accept temp default '100';
 prompt "Tous les privilèges donnés par le rôle"
 select * from dba_tab_privs where grantee IN (select granted_role from user_role_privs where granted_role like '%_ADMIN30');
 
+prompt (appuyer sur une touche pour continuer);
+accept temp default '100';
 prompt "******************************************************"
 prompt "*******************DOIT FONCTIONNER*******************"
 prompt "*************EN TANT QUE USER 7 : ADMIN***************"

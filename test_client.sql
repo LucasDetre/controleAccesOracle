@@ -1,5 +1,8 @@
+
+accept temp default '100';
 prompt "==============================================================================================="
-prompt "Test rôle Admin"
+prompt "====================================Test rôle Client==========================================="
+prompt "==============================================================================================="
 
 -- Test Contexte
 EXECUTE admin30.set_cal_ctx_pkg_admin30.set_cal;
@@ -80,7 +83,7 @@ prompt "******************************************************"
 
         INSERT INTO admin30.Calendrier_ADMIN30 (id_contact, id_evenement) VALUES ('USER3', 1);
         DELETE FROM admin30.Calendrier_ADMIN30 WHERE id_contact='USER3' AND id_evenement=1;
-        UPDATE admin30.Calendrier_ADMIN30 SET id_evenement=1 WHERE id='USER3'  AND id_evenement=4;
+        UPDATE admin30.Calendrier_ADMIN30 SET id_evenement=1 WHERE id_contact='USER3' AND id_evenement=4;
 
     prompt "SELECT Vue Calendrier x Evenement x Contact"
         prompt (appuyer sur une touche pour continuer);
