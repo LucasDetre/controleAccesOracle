@@ -1,3 +1,6 @@
+prompt "==============================================================================================="
+prompt "Test rôle Admin"
+
 -- Test Contexte
 EXECUTE admin30.set_cal_ctx_pkg_admin30.set_cal;
 SELECT SYS_CONTEXT('CAL_CTX_ADMIN30', 'ROLE') FROM DUAL;
@@ -100,7 +103,7 @@ prompt "******************************************************"
 
     prompt "UPDATE Calendrier"
 
-        UPDATE admin30.Calendrier_ADMIN30 SET id_evenement=1 WHERE id='USER3' AND id_evenement=4;
+        UPDATE admin30.Calendrier_ADMIN30 SET id_evenement=1 WHERE id_contact='USER3' AND id_evenement=4;
 
     prompt "SELECT Vue Calendrier x Evenement x Contact"
         prompt (appuyer sur une touche pour continuer);
