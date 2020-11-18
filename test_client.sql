@@ -66,7 +66,7 @@ prompt "******************************************************"
     prompt "INSERTION, SUPPRESSION, MISE A JOUR Contact"
 
         INSERT INTO admin30.Contact_ADMIN30 (id, nom, prenom, telephone, courriel, categorie) VALUES ('USER8', 'Testeur', 'Jean-Michel', 0777777777, 'test@gmail.com','Client');
-        DELETE FROM admin30.Contact_ADMIN30 WHERE id_contact='USER8';
+        DELETE FROM admin30.Contact_ADMIN30 WHERE id='USER8';
         UPDATE admin30.Contact_ADMIN30 SET nom='SMITH' WHERE id='USER2';
 
     prompt (appuyer sur une touche pour continuer);
